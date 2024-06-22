@@ -10,10 +10,18 @@ public class MethodsDemo {
         MethodsTwoDemo b = new MethodsTwoDemo();
         String nameTwo = b.getDataTwo();
         System.out.println(nameTwo);
+
+        System.out.println(getDataThree());
     }
     public String getData()
     {
         System.out.println("Hello World From GetData");
         return "Hkasdnas";
+    }
+
+    // It Belongs to class, not object
+    public static String getDataThree()
+    {
+        return "Static Methods Demo";
     }
 }
