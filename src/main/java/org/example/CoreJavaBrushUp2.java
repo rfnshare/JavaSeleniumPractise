@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CoreJavaBrushUp2 {
     public static void main(String[] args) {
@@ -35,12 +37,20 @@ public class CoreJavaBrushUp2 {
         list.add("World");
         list.add("Java");
         System.out.println(list);
-        list.remove(1);
+//        list.remove(1);
         System.out.println(list.get(1));
+        System.out.println(list.size()+" List Size");
         for(String s : list)
         {
             System.out.println(s);
         }
+        System.out.println(list.contains("Java"));
 
+        List<Integer> array2List = new ArrayList<Integer>();
+        for(int z: array2)
+        {
+            array2List.add(z);
+        }
+        System.out.println(array2List.contains(122)+"122 Contains");
     }
 }
