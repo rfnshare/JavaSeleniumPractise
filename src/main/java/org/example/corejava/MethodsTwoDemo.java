@@ -1,4 +1,4 @@
-package org.example;
+package org.example.corejava;
 
 public class MethodsTwoDemo {
     protected String getDataTwo()

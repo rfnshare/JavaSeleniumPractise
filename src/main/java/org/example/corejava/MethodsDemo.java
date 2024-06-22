@@ -1,4 +1,4 @@
-package org.example;
+package org.example.corejava;
 
 public class MethodsDemo {
     public static void main(String[] args) {
