@@ -29,10 +29,10 @@ public class UpdateDropDown {
         Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adult");
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("input[name*='friendsandfamily']")).click();
-        System.out.println(driver.findElement(By.cssSelector("input[name*='friendsandfamily']")).isSelected());
+        Assert.assertTrue(driver.findElement(By.cssSelector("input[name*='friendsandfamily']")).isSelected());
 
         List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
-        System.out.println(checkboxes.size());
+        Assert.assertEquals(checkboxes.size(),6);
         driver.quit();
     }
 }
