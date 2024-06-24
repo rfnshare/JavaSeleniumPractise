@@ -16,5 +16,8 @@ public class Scope {
 
         WebElement footer = driver.findElement(By.id("gf-BIG"));
         System.out.println(footer.findElements(By.tagName("a")).size());
+
+        WebElement ul = footer.findElement(By.xpath("//table/tbody/tr/td[1]/ul"));
+        System.out.println(ul.findElements(By.tagName("a")).size());
     }
 }
