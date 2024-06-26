@@ -11,5 +11,11 @@ public class Miscellaneous {
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://expired.badssl.com/");
         System.out.println(driver.getTitle());
+
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+        driver.manage().deleteCookieNamed("a");
+
+        driver.quit();
     }
 }
