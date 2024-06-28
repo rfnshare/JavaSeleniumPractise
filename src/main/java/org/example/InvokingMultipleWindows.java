@@ -1,15 +1,16 @@
 package org.example;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WindowType;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Set;
 import java.util.Iterator;
 public class InvokingMultipleWindows {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
@@ -23,7 +24,10 @@ public class InvokingMultipleWindows {
         driver.get("https://rahulshettyacademy.com/");
         String courseName = driver.findElement(By.xpath("(//div[@class='upper-box']/h2/a)[1]")).getText();
         driver.switchTo().window(window);
-        driver.findElement(By.xpath("//input[@name='name']")).sendKeys(courseName);
+        WebElement nameEditBox = driver.findElement(By.xpath("//input[@name='name']"));
+        nameEditBox.sendKeys(courseName);
+        File file = nameEditBox.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file, new File("E:\\Screenshot\\screenshot.png"));
         driver.quit();
     }
 }
