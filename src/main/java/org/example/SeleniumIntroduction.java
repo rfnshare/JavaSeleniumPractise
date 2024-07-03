@@ -19,7 +19,7 @@ public class SeleniumIntroduction {
     {
         System.out.println("Selenium introduction");
     }
-    @Test(groups = {"Smoke"})
+    @Test(groups = {"Smoke"}, dependsOnMethods = {"DemoThree", "Demo"})
     public void DemoTwo()
     {
         System.out.println("Selenium introduction Two");
