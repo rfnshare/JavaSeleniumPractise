@@ -14,11 +14,11 @@ public class SeleniumIntroduction {
         driver.close();
         driver.quit();
     }
-//    @Test
-//    public void Demo()
-//    {
-//        System.out.println("Selenium introduction");
-//    }
+    @Test
+    public void Demo()
+    {
+        System.out.println("Selenium introduction");
+    }
 //    @Test
 //    public void DemoTwo()
 //    {
