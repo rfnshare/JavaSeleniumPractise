@@ -19,30 +19,35 @@ public class SeleniumIntroduction {
     {
         System.out.println("Selenium introduction");
     }
-//    @Test
-//    public void DemoTwo()
-//    {
-//        System.out.println("Selenium introduction Two");
-//    }
-//    @BeforeTest
-//    public void prerequisite()
-//    {
-//        System.out.println("Selenium introduction Initiate");
-//    }
-//
-//    @AfterTest
-//    public void teardown()
-//    {
-//        System.out.println("Selenium introduction End");
-//    }
-//    @BeforeSuite
-//    public void bs()
-//    {
-//        System.out.println("Before Suite");
-//    }
-//    @AfterSuite
-//    public void as()
-//    {
-//        System.out.println("After Suite");
-//    }
+    @Test(groups = {"Smoke"})
+    public void DemoTwo()
+    {
+        System.out.println("Selenium introduction Two");
+    }
+    @Test
+    public void DemoThree()
+    {
+        System.out.println("Selenium introduction Three");
+    }
+    @BeforeTest
+    public void prerequisite()
+    {
+        System.out.println("Selenium introduction Initiate");
+    }
+
+    @AfterTest
+    public void teardown()
+    {
+        System.out.println("Selenium introduction End");
+    }
+    @BeforeSuite
+    public void bs()
+    {
+        System.out.println("Before Suite");
+    }
+    @AfterSuite
+    public void as()
+    {
+        System.out.println("After Suite");
+    }
 }
