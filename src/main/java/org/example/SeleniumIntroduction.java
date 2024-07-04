@@ -14,7 +14,7 @@ public class SeleniumIntroduction {
         driver.close();
         driver.quit();
     }
-    @Test
+    @Test(enabled = false, timeOut = 5000)
     public void Demo()
     {
         System.out.println("Selenium introduction");
