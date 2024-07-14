@@ -14,42 +14,59 @@ public class SeleniumIntroduction {
         driver.close();
         driver.quit();
     }
+
     @Test(enabled = false, timeOut = 5000)
-    public void Demo()
-    {
+    public void Demo() {
         System.out.println("Selenium introduction");
     }
+
     @Test
 //    @Test(groups = {"Smoke"}, dependsOnMethods = {"DemoThree", "Demo"})
-    public void DemoTwo()
-    {
+    public void DemoTwo() {
         System.out.println("Selenium introduction Two");
     }
-    @Parameters({"URL"})
+
+    @Parameters({"URL", "KEY"})
     @Test
-    public void DemoThree(String url)
-    {
-        System.out.println("Selenium introduction Three " + url);
+    public void DemoThree(String url, String key) {
+        System.out.println("Selenium introduction Three " + url + key);
     }
+
+    @Test(dataProvider="getData")
+    public void DemoFour(String name, String pass) {
+        System.out.println("Selenium introduction " + name + " " + pass);
+    }
+
     @BeforeTest
-    public void prerequisite()
-    {
+    public void prerequisite() {
         System.out.println("Selenium introduction Initiate");
     }
 
     @AfterTest
-    public void teardown()
-    {
+    public void teardown() {
         System.out.println("Selenium introduction End");
     }
+
     @BeforeSuite
-    public void bs()
-    {
+    public void bs() {
         System.out.println("Before Suite");
     }
+
     @AfterSuite
-    public void as()
-    {
+    public void as() {
         System.out.println("After Suite");
+    }
+
+    @DataProvider
+    public Object[][] getData() {
+        Object[][] data = new Object[3][2];
+        data[0][0] = "faroque";
+        data[0][1] = "12345";
+        data[1][0] = "raju";
+        data[1][1] = "12345";
+        data[2][0] = "noman";
+        data[2][1] = "12345";
+
+        return data;
     }
 }
