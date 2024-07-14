@@ -19,15 +19,17 @@ public class SeleniumIntroduction {
     {
         System.out.println("Selenium introduction");
     }
-    @Test(groups = {"Smoke"}, dependsOnMethods = {"DemoThree", "Demo"})
+    @Test
+//    @Test(groups = {"Smoke"}, dependsOnMethods = {"DemoThree", "Demo"})
     public void DemoTwo()
     {
         System.out.println("Selenium introduction Two");
     }
+    @Parameters({"URL"})
     @Test
-    public void DemoThree()
+    public void DemoThree(String url)
     {
-        System.out.println("Selenium introduction Three");
+        System.out.println("Selenium introduction Three " + url);
     }
     @BeforeTest
     public void prerequisite()

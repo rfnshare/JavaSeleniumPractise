@@ -1,5 +1,8 @@
 package org.example.corejava;
 
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
 public class CoreJavaBrushUp1 {
     public static void main(String[] args) {
         int num = 5;
@@ -41,7 +44,11 @@ public class CoreJavaBrushUp1 {
         {
             System.out.println(s);
         }
-
-
+    }
+    @Parameters({"URL"})
+    @Test
+    public void test(String url)
+    {
+        System.out.println("Testing url: " + url);
     }
 }
